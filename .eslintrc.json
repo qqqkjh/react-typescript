@@ -1,7 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["import", "react","@typescript-eslint"],
+  "plugins": ["react","@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -22,6 +22,13 @@
   },
   "rules": {
     // add your own custom rules here
-    "react/jsx-filename-extension":["warn",{"extensions":[".tsx"]}]
+    "react/jsx-filename-extension":["warn",{"extensions":[".tsx"]}],
+    "@typescript-eslint/indent" : "off",
+    "react/display-name": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": "off",
+    "arrow-body-style": "off",
+    "import/extensions": "off"
   }
 }
