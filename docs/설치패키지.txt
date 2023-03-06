@@ -1,0 +1,33 @@
+//웹팩설치
+npm install --save-dev webpack webpack-cli
+npm install --save-dev webpack-dev-server
+npm install --save-dev clean-webpack-plugin
+
+//타입스크립트 , 바벨 설치
+npm install --save-dev typescript @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript babel-loader
+
+//바벨플러그인
+npm install --save-dev html-webpack-plugin
+npm install --save-dev html-webpack-plugin
+
+//eslint
+npm install --save-dev eslint @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest
+npm install --save-dev eslint-plugin-import eslint-plugin-react
+//eslint 에어비엔비
+npx install-peerdeps --dev eslint-config-airbnb
+
+//eslint 에어비엔비 타입스크립트
+npm install --save-dev eslint-config-airbnb-typescript \
+            @typescript-eslint/eslint-plugin@^5.13.0 \
+            @typescript-eslint/parser@^5.0.0 \
+
+
+
+//리엑트
+npm install --save react react-dom
+npm install --save @types/react @types/react-dom
+
+//라우터
+npm install --save react-router-dom@5
+npm install --save @types/react-router-dom@5
+
