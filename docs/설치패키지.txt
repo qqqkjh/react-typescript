@@ -31,3 +31,5 @@ npm install --save @types/react @types/react-dom
 npm install --save react-router-dom@5
 npm install --save @types/react-router-dom@5
 
+//styled-components
+npm install --save styled-components @types/styled-components
