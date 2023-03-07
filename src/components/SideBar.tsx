@@ -8,7 +8,7 @@ const SideBar = (props : SideBarProps) => {
     const { open } = props;
     console.log(open);
     return (
-      <div className="active" data-open={open}>
+      <div className="side active" data-open={open}>
         <div className="side-box">
           <div className="side-header">
             <h1 className="root-title">

@@ -1,0 +1,292 @@
+.side {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: -300px;
+    z-index: 9;
+    width: 300px;
+    background-color: white;
+}
+.side[data-open=false] {
+    left: 0;
+    overflow: auto;
+}
+.side .side-header {
+    border: 1px solid #EAEEF4;
+    border-top: none;
+}
+
+@media (min-width: 1200px) {
+    .side {
+        top: 0;
+        left: 0;
+        width: 70px;
+        background-color: #0361CB;
+        transition: none;
+    }
+    .side .side-header {
+        height: auto;
+        padding: 20px;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 15%);
+        text-align: center;
+    }
+    .side .root-title {
+        margin-bottom: 0;
+    }
+    .side .root-title .logo {
+        width: 100%;
+        height: 48px;
+        margin-bottom: 0;
+    }
+    .side .root-title .sub-title {
+        position: relative;
+        display: none;
+        margin-top: 15px;
+        margin-bottom: 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+    }
+    .side .root-title .sub-title::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: white;
+    }
+
+    .side.active {
+        width: 270px;
+    }
+    .side.active .root-title {
+        margin-bottom: 8px;
+    }
+    .side.active .root-title .logo {
+        margin-bottom: 30px;
+        margin-left: -3px;
+    }
+    .side.active .root-title .glogo {
+        margin-bottom: 30px;
+        margin-left: -3px;
+    }
+    .side.active .root-title .logo {
+
+    }
+
+    .side.active .root-title .sub-title {
+        display: block;
+    }
+
+    /********** 메뉴 - PC **********/
+
+    .menubar [role="menuitem"] {
+        color: white;
+    }
+
+    /* 1뎁스, 2뎁스 공통 - PC */
+
+    .menubar > li > [role="menuitem"][aria-haspopup="true"]::before,
+    .menubar > li > [role="menu"] > li > [role="menuitem"][aria-haspopup="true"]::before {
+        display: none;
+    }
+    .menubar > li > [role="menuitem"][aria-haspopup="true"]::after,
+    .menubar > li > [role="menu"] > li > [role="menuitem"][aria-haspopup="true"]::after {
+        right: 19px;
+        display: none;
+        width: .45rem;
+        height: .45rem;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        pointer-events: none;
+        background-color: transparent;
+        transform: translateY(-50%) rotate(45deg);
+        /* transition: transform .3s; */
+    }
+    .side.active .menubar > li > [role="menuitem"][aria-haspopup="true"]::after,
+    .side.active .menubar > li > [role="menu"] > li > [role="menuitem"][aria-haspopup="true"]::after {
+        display: block;
+    }
+    .side.active .menubar > li > [role="menuitem"][aria-haspopup="true"][aria-expanded="true"]::after,
+    .side.active .menubar > li > [role="menu"] > li > [role="menuitem"][aria-haspopup="true"][aria-expanded="true"]::after {
+        border-color: white;
+        transform: translateY(-50%) rotate(-135deg);
+    }
+
+    /* 1뎁스 - PC */
+
+    .menubar > li > [role="menuitem"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 64px;
+        padding-right: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, .15);
+        font-size: 18px;
+    }
+    .menubar > li > [role="menuitem"]:hover {
+        background-color: #0055B4;
+    }
+    .menubar > li > [role="menuitem"] > img {
+        display: inline-block;
+        margin-right: 0;
+    }
+    .menubar > li > [role="menuitem"] .item-title {
+        display: none;
+    }
+    .menubar > li > [role="menu"] {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .side.active .menubar > li > [role="menuitem"] {
+        justify-content: flex-start;
+        padding-right: 35px;
+    }
+    .side.active .menubar > li > [role="menuitem"] > img {
+        margin-right: 10px;
+    }
+    .side.active .menubar > li > [role="menuitem"] .item-title {
+        display: block;
+    }
+    .side.active .menubar > li > [role="menu"] {
+        height: auto;
+        overflow: visible;
+    }
+
+    .side.active .menubar > li > [role="menuitem"][aria-expanded="true"] {
+        background-color: #0055B4;
+    }
+
+    /* 2뎁스 - PC */
+
+    .menubar > li > [role="menu"] > li > [role="menuitem"] {
+        background-color: #044A9F;
+        border-bottom: none;
+        font-size: 16px;
+    }
+    .menubar > li > [role="menu"] > li > [role="menuitem"]:hover {
+        background-color: #033E86
+    }
+
+    /* 3뎁스 - PC */
+
+    .menubar > li > [role="menu"] > li > [role="menu"] {
+        background-color: #044A9F;
+    }
+    .menubar > li > [role="menu"] > li > [role="menu"] > li > [role="menuitem"] {
+        font-size: 16px;
+    }
+    .menubar > li > [role="menu"] > li > [role="menu"] > li > [role="menuitem"]::before {
+        content: "-";
+    }
+    .menubar > li > [role="menu"] > li > [role="menu"] > li > [role="menuitem"]:hover {
+        background-color: #033E86
+    }
+    .menubar > li > [role="menu"] > li > [role="menuitem"][aria-expanded="true"] + [role="menu"] {
+        border-bottom: none;
+    }
+
+    .menubar > li > [role="menu"] > li > [role="menu"] > li > [role="menuitem"].active {
+        background-color: #033E86
+    }
+    .menubar > li > [role="menu"] > li > [role="menu"] > li > [role="menuitem"].active::after {
+        border-left-color: white;
+    }
+
+    /********** 사이드 축소 - PC **********/
+
+    .side.mini {
+        width: 70px;
+        left: 0;
+    }
+    .side.mini .menubar > li > [role="menuitem"] {
+        justify-content: center;
+        padding-right: 15px;
+    }
+    .side.mini .menubar > li > [role="menuitem"] > img {
+        margin-right: 0;
+    }
+    .side.mini .menubar > li > [role="menuitem"] .item-title {
+        display: none;
+    }
+    .side.mini .menubar > li > [role="menu"] {
+        height: 0;
+        overflow: hidden;
+    }
+    .side.mini .menubar > li > [role="menuitem"][aria-haspopup="true"]::after,
+    .side.mini .menubar > li > [role="menu"] > li > [role="menuitem"][aria-haspopup="true"]::after {
+        display: none;
+    }
+
+    /********** 주차(week) 정보 - PC **********/
+
+    .week-info-list {
+        padding: 5px;
+        border-radius: 4px;
+    }
+    .week-info-list > li {
+        margin-right: 20px;
+    }
+    .week-info-list > li::after {
+        right: -10px;
+    }
+
+    /********** 회원 정보 - PC **********/
+
+    .member-box {
+        display: flex;
+        height: 40px;
+        padding: 3px;
+        background-color: white;
+        border: 1px solid #D4D8DD;
+        border-radius: 8px;
+    }
+    .member-box-list {
+        padding: 0;
+    }
+    .member-box-list > li,
+    .member-box-list > li:nth-child(2) {
+        margin-right: 10px;
+    }
+
+    /* 사용자 정보 - PC */
+
+    .member-box .member-info {
+        padding: 0 0 0 5px;
+    }
+
+    /* 인증 - PC */
+
+    .auth-link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto;
+        height: 40px;
+        min-width: 80px;
+        padding: 0 10px 0 30px;
+        margin-right: -4px;
+        border-radius: 0;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background-position: 9px center;
+        text-indent: 0;
+        color: white;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    .auth-link:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* 알림 - PC */
+    .alert-box {
+        margin-top: 7px;
+    }
+}

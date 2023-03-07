@@ -1,0 +1,169 @@
+
+.header {
+    position: relative;
+    z-index: 8;
+    height: 56px;
+    border-bottom: 1px solid #CCCFD3;
+    background-color: white;
+}
+.header .header-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    background-color: white;
+}
+.header .menu-btn,
+.header .site-map-link,
+.header .search-btn {
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    background: no-repeat center;
+    border: none;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.header .menu-btn {
+}
+.header .site-map-link {
+    display: none;
+    border-radius: 8px;
+    background-color: #0361CB;
+    background-position: center;
+}
+.header .search-btn {
+}
+
+.header .root-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    font-size: 12px;
+}
+.header .root-title .logo {
+    width: 109px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.header .root-title .sub-title {
+    position: relative;
+    margin-bottom: 0;
+}
+.header .root-title .sub-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    display: none;
+    width: 1px;
+    height: 14px;
+    background-color: #CCCFD3
+}
+
+.header-backdrop {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    display: none;
+    background: rgba(0, 0, 0, .5);
+}
+
+@media (min-width: 360px) {
+    .header .root-title .logo {
+        margin-right: 30px;
+    }
+
+    .header .root-title .sub-title::before {
+        display: inline-block;
+    }
+}
+
+/********** 통합 검색 **********/
+
+.header .search-box .input-group {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    padding: 16px;
+    background-color: #EAEEF4;
+    transition: top .3s;
+}
+.header .search-box .input-group .search-input {
+    height: 40px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.header .search-box .input-group .btn {
+    width: 52px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0 8px 8px 0;
+    text-indent: -9999px;
+}
+
+/* 통합 검색 active */
+
+.header .search-box.active .input-group {
+    top: 56px;
+}
+
+/*#################### 헤더 - PC ####################*/
+
+@media (min-width: 1200px) {
+    .header {
+        margin-bottom: 30px;
+        background-color: transparent;
+        border-bottom: none;
+    }
+    .header .header-box {
+        background-color: transparent;
+    }
+    .header .header-item:first-child {
+        flex: 1;
+        max-width: none;
+        display: flex;
+        margin-right: 10px;
+    }
+    .header .menu-btn,
+    .header .site-map-link {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        margin-right: 10px;
+    }
+    .header .menu-btn {
+        background-color: #00C1DE;
+        background-position: 15px center;
+        border-radius: 8px;
+    }
+    .contents.side-active .header .menu-btn {
+        background-color: #0361CB;
+        transform: rotate(-180deg);
+    }
+
+    .header .site-map-link {
+        display: block;
+    }
+
+    /* 통합 검색 - PC */
+
+    .header .search-btn {
+        display: none;
+    }
+    .header .search-box {
+        width: 100%;
+    }
+    .header .search-box .input-group {
+        position: static;
+        padding: 0;
+    }
+}

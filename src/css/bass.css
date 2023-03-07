@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+}
+body {
+    background-color: #EAEEF4;
+    font-family: "noto", sans-serif;
+    color: #47494B;
+    letter-spacing: -.05em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+a:hover {
+    cursor: pointer;
+}
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ol > li {
+    padding-left: 0;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+form {
+    margin-bottom: 0;
+}
+
+#root {
+    max-width: 1920px;
+    min-width: 320px;
+}

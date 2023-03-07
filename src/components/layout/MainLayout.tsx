@@ -1,5 +1,8 @@
 import React, { ComponentType } from 'react';
 import SideBar from '@src/components/SideBar';
+import '@src/css/sidebar.css';
+import '@src/css/contents.css';
+import Header from '@src/components/Header';
 // import styled from 'styled-components';
 
 interface Props {
@@ -19,8 +22,11 @@ const MainLayout = <P extends Props>(WrappedComponent: ComponentType<P>): Compon
   return (props: P) => (
     <>
       <SideBar open={false} />
-      <div className="contents">
-        <WrappedComponent {...props} />
+      <div className="contents side-active">
+        <Header />
+        <div className="main">
+          <WrappedComponent {...props} />
+        </div>
       </div>
     </>
   );

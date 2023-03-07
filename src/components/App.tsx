@@ -1,5 +1,6 @@
 import React from 'react';
 import RootRouter from '@src/routes';
+import '@src/css/bass.css';
 
 const App = () => {
     return (
