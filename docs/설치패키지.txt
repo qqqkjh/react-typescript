@@ -6,9 +6,15 @@ npm install --save-dev clean-webpack-plugin
 //타입스크립트 , 바벨 설치
 npm install --save-dev typescript @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript babel-loader
 
+//env
+npm install --save-dev dotenv-webpack
+
+
 //바벨플러그인
 npm install --save-dev html-webpack-plugin
 npm install --save-dev html-webpack-plugin
+npm install --save-dev css-loader style-loader
+npm install --save-dev mini-css-extract-plugin
 
 //eslint
 npm install --save-dev eslint @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest
@@ -28,8 +34,8 @@ npm install --save react react-dom
 npm install --save @types/react @types/react-dom
 
 //라우터
-npm install --save react-router-dom@5
-npm install --save @types/react-router-dom@5
+npm install --save react-router-dom
+npm install --save @types/react-router-dom
 
 //styled-components
 npm install --save styled-components @types/styled-components

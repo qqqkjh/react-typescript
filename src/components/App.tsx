@@ -1,25 +1,14 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import HomePage from '@/pages/HomePage';
+import RootRouter from '@src/routes';
 
-function App() {
-  return (
-    <React.StrictMode>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/">
-            <HomePage />
-          </Route>
-          <Route path="/about">
-            <div>AboutPage</div>
-          </Route>
-          <Route path="/contact">
-            <div>ContactPage</div>
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </React.StrictMode>
-  );
-}
+const App = () => {
+    return (
+      <React.StrictMode>
+        <RootRouter />
+      </React.StrictMode>
+);
+};
+
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
 export default App;

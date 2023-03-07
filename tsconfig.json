@@ -16,18 +16,19 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
+    "typeRoots": ["node_modules/@types", "src/types"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@pages": ["src/pages/*"],
-      "@utils/*": ["src/utils/*"],
-      "@redux/*": ["src/redux/*"],
-    }
+      "@src/*": [
+        "src/*"
+      ]
+     }
 
   },
   "include": [
-    "src/**/*",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.d.ts",
   ],
   "exclude": ["node_modules","dist","docs","public"]
 }
